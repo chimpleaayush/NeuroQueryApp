@@ -11,7 +11,7 @@ import {Color} from './src/asset';
 // LogBox.ignoreAllLogs();
 
 const AppHOC = () => {
-  return <Route isLoggedIn={true} />;
+  return <Route isLoggedIn={false} />;
 };
 
 const AppWrappedWithStore = () => {
