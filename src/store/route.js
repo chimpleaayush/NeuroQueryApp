@@ -19,28 +19,6 @@ const iconConfig = {
   // profileSelected: require('../asset/Icons/myProfileActive.png'),
 };
 
-const {width} = Dimensions.get('window');
-
-const renderTabIcon = ({focused}, screen) => {
-  let tabIcon = iconConfig[screen];
-  if (focused) {
-    tabIcon = iconConfig[`${screen}Selected`];
-  }
-  return (
-    <>
-      {screen !== 'post' ? (
-        <View style={styles.tabIconContainer}>
-          <Image resizeMode="contain" style={styles.tabIcon} source={tabIcon} />
-        </View>
-      ) : (
-        <View style={[styles.tabIconContainer, {width: 45, height: 45}]}>
-          <Image resizeMode="contain" style={styles.tabIcon} source={tabIcon} />
-        </View>
-      )}
-    </>
-  );
-};
-
 const getTabScreen = (tabName, navigation) => {
   switch (tabName) {
     case 'Queries':
@@ -108,6 +86,7 @@ export const StudentHomeTabs = ({navigation}) => (
 export const MentorHomeTabs = ({navigation}) => (
   <Tab.Navigator
     screenOptions={{
+      headerShown: false,
       tabBarLabelPosition: 'beside-icon',
       tabBarInactiveTintColor: Color.grey4,
       tabBarActiveTintColor: Color.blue2,
@@ -116,23 +95,9 @@ export const MentorHomeTabs = ({navigation}) => (
         justifyContent: 'center',
       },
       tabBarLabelStyle: {
-        fontSize: 12,
-        lineHeight: 8,
         fontFamily: Font.BOLD,
       },
     }}>
     {mentorTab.map(keys => getTabScreen(keys, navigation))}
   </Tab.Navigator>
 );
-
-export const styles = StyleSheet.create({
-  tabIcon: {
-    flex: 1,
-  },
-  tabIconContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: width * 0.07,
-    height: width * 0.07,
-  },
-});
