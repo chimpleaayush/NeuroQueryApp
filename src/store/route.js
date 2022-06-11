@@ -88,23 +88,17 @@ const mentorTab = ['Queries', 'Tickets'];
 
 export const StudentHomeTabs = ({navigation}) => (
   <Tab.Navigator
-    tabBarOptions={{
-      labelStyle: {
-        fontSize: 8,
-        lineHeight: 10,
-        fontFamily: Font.SEMI_BOLD,
-      },
-      activeTintColor: Color.blue2,
-      inactiveTintColor: Color.grey4,
-      style: {
-        elevation: 2,
-        justifyContent: 'center',
-        padding: 8,
-      },
-      tabStyle: {
+    screenOptions={{
+      headerShown: false,
+      tabBarLabelPosition: 'beside-icon',
+      tabBarInactiveTintColor: Color.grey4,
+      tabBarActiveTintColor: Color.blue2,
+      tabBarStyle: {
         alignItems: 'center',
         justifyContent: 'center',
-        paddingBottom: 6,
+      },
+      tabBarLabelStyle: {
+        fontFamily: Font.BOLD,
       },
     }}>
     {studentTab.map(keys => getTabScreen(keys, navigation))}
@@ -113,23 +107,18 @@ export const StudentHomeTabs = ({navigation}) => (
 
 export const MentorHomeTabs = ({navigation}) => (
   <Tab.Navigator
-    tabBarOptions={{
-      labelStyle: {
-        fontSize: 8,
-        lineHeight: 10,
-        fontFamily: Font.SEMI_BOLD,
-      },
-      activeTintColor: Color.blue2,
-      inactiveTintColor: Color.grey4,
-      style: {
-        elevation: 2,
-        justifyContent: 'center',
-        padding: 8,
-      },
-      tabStyle: {
+    screenOptions={{
+      tabBarLabelPosition: 'beside-icon',
+      tabBarInactiveTintColor: Color.grey4,
+      tabBarActiveTintColor: Color.blue2,
+      tabBarStyle: {
         alignItems: 'center',
         justifyContent: 'center',
-        paddingBottom: 6,
+      },
+      tabBarLabelStyle: {
+        fontSize: 12,
+        lineHeight: 8,
+        fontFamily: Font.BOLD,
       },
     }}>
     {mentorTab.map(keys => getTabScreen(keys, navigation))}
