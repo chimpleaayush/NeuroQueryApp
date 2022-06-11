@@ -51,7 +51,13 @@ const getTabScreen = (tabName, navigation) => {
           component={Queries}
           options={{
             tabBarLabel: 'Queries',
-            tabBarIcon: navProps => renderTabIcon(navProps, 'home'),
+            tabBarIcon: () => (
+              <MaterialCommunityIcons
+                name="chat-question"
+                size={21}
+                color="#000"
+              />
+            ),
           }}
         />
       );
@@ -64,7 +70,9 @@ const getTabScreen = (tabName, navigation) => {
           component={Tickets}
           options={{
             tabBarLabel: 'Tickets',
-            tabBarIcon: navProps => renderTabIcon(navProps, 'content'),
+            tabBarIcon: () => (
+              <MaterialCommunityIcons name="ticket" size={21} color="#000" />
+            ),
           }}
         />
       );
