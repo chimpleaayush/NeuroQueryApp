@@ -18,7 +18,11 @@ const AppWrappedWithStore = () => {
   return (
     <ErrorBoundary>
       <Provider store={store}>
-        <StatusBar animated backgroundColor={Color.bgWhite} />
+        <StatusBar
+          barStyle="light-content"
+          animated
+          backgroundColor={Color.black}
+        />
         <AppHOC />
       </Provider>
     </ErrorBoundary>

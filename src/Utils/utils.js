@@ -58,14 +58,11 @@ export const useBackButton = handler => {
  */
 export const createCustomScreenStack = ({
   screens,
-  headerMode = 'false',
-  customScreenOptions = {},
+  customScreenOptions = {headerMode: false},
   customOptions = {},
 }) => {
   return (
-    <Stack.Navigator
-      screenOptions={customScreenOptions}
-      headerMode={headerMode}>
+    <Stack.Navigator screenOptions={customScreenOptions}>
       {Object.entries(screens).map(([name, component]) => (
         <Stack.Screen
           options={customOptions}
